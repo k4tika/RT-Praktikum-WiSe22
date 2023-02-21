@@ -39,7 +39,7 @@ phase=squeeze(phase);
 %     % bode( ) sometimes shifts a phase plot +360 degrees in a misleading way, so 
 %     % this is an attempt to rectify this. But the criteria are admittedly a bit arbitrary ;-)
 % end
-plot(w,phase,'LineWidth',1.5);
+plot(w,phase,'LineWidth',0.8);
 
 % Order of denominator polynomial and
 % number of pure integrators, if any, are found:
@@ -137,7 +137,7 @@ yxlim=axis;
 hold on;
 grid;
 
-plot(w,mag,'LineWidth',1.5);
+plot(w,mag,'LineWidth',0.8);
 
 
 magmax=max([magpoints,mag']); magmin=min([magpoints,mag']);
@@ -161,10 +161,10 @@ axis(yscalemag);
 
 
 % Magnitude asymptote plot on top of magnitude part of Bode diagram:
-plot(freqpoints(2:np-1),magpoints(2:np-1),'r.-','MarkerSize',14,'LineWidth',1.3);
+plot(freqpoints(2:np-1),magpoints(2:np-1),'k.-','MarkerSize',10,'LineWidth',0.8);
 % No dots at start and end points:
-plot(freqpoints(1:2),magpoints(1:2),'r-','LineWidth',1.3);
-plot(freqpoints(np-1:np),magpoints(np-1:np),'r-','LineWidth',1.3);
+plot(freqpoints(1:2),magpoints(1:2),'k-','LineWidth',0.8);
+plot(freqpoints(np-1:np),magpoints(np-1:np),'k-','LineWidth',0.8);
 hold off;
 
 % Phase asymptote plot on top of phase part of Bode diagram. 
@@ -204,10 +204,10 @@ axis(yscaleph);
 % at break frequencies:
 freqpoints= sort([freqpoints(1:np-1),freqpoints(2:np)]);
 np=length(freqpoints);
-plot(freqpoints(2:np-1),phapoints(2:np-1),'r.-','MarkerSize',14,'LineWidth',1.3);
+plot(freqpoints(2:np-1),phapoints(2:np-1),'k.-','MarkerSize',10,'LineWidth',0.8);
 % No dots at start and end points:
-plot(freqpoints(1:2),phapoints(1:2),'r-','LineWidth',1.3);
-plot(freqpoints(np-1:np),phapoints(np-1:np),'r-','LineWidth',1.3);
+plot(freqpoints(1:2),phapoints(1:2),'k-','LineWidth',0.8);
+plot(freqpoints(np-1:np),phapoints(np-1:np),'k-','LineWidth',0.8);
 
 set(get(gcf, 'CurrentAxes'),'YTick',phmin:ydelta:phmax);
 
